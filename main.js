@@ -1,33 +1,35 @@
 $(document).ready(function() {
     let score = 0;
-    let basketPos = 300; 
+    let basketPos = 0; 
 
-    // basket movement
+// basket movement
+
     $(document).keydown(function(e) {
         if (e.key === "ArrowLeft" && basketPos > 20) {
-            basketPos -= 20;
-        } else if (e.key === "ArrowRight" && basketPos < 485) {
-            basketPos += 20;
+            basketPos -= 40;
+        } else if (e.key === "ArrowRight" && basketPos < 300) {
+            basketPos += 40;
         }
         $("#basket").css("left", basketPos + "px");
     });
 
     $(document).ready(function() {
     let score = 0;
-    let basketPos = 300;
+    let basketPos = 400;
     let touchStartX = 0;
     let touchEndX = 0;
 
-    // Keyboard movement remains
     $(document).keydown(function(e) {
         moveBasket(e.key);
     });
 
-    // Button taps for movement
+// Buttons for movement
+
     $("#leftBtn").click(() => moveBasket("ArrowLeft"));
     $("#rightBtn").click(() => moveBasket("ArrowRight"));
 
-    // Swipe gestures for mobile
+// mobile controls
+
     $("#game-area").on("touchstart", function(event) {
         touchStartX = event.touches[0].clientX;
     });
@@ -39,12 +41,15 @@ $(document).ready(function() {
 
     function moveBasket(direction) {
         if (direction === "ArrowLeft" && basketPos > 20) {
-            basketPos -= 20;
-        } else if (direction === "ArrowRight" && basketPos < 485) {
-            basketPos += 20;
+            basketPos -= 40;
+        } else if (direction === "ArrowRight" && basketPos < 300) {
+            basketPos += 40;
         }
         $("#basket").css("left", basketPos + "px");
     }
+
+
+// Swipe control
 
     function handleSwipe() {
         if (touchEndX < touchStartX - 50) {
@@ -54,12 +59,11 @@ $(document).ready(function() {
         }
     }
 });
-
-
     
-    // Function to drop pets
+// Function to drop pets
+
    function dropPet(petId) {
-    let petPos = Math.random() * 400; //  horizontal position
+    let petPos = Math.random() * 400;
     $("#" + petId).css({ "left": petPos + "px", "top": "0px", "opacity": "1", "display": "block" }); 
 
     $("#" + petId).animate({ top: "370px" }, 1800, function() {
@@ -70,7 +74,8 @@ $(document).ready(function() {
             score += 1;
             $("#score").text(score);
 
-            // Fade 
+// Fade after caught
+
             $("#" + petId).fadeOut(500, function() {
                 $(this).css("top", "0px");
                 $(this).css("opacity", "1"); 
@@ -83,7 +88,8 @@ $(document).ready(function() {
 }
 
 
-    // Pets drop at different intervals
+// Pets drop timing
+
     setInterval(function() { dropPet("falling-cat"); }, 4000);
     setInterval(function() { dropPet("falling-dog"); }, 5000);
 });
