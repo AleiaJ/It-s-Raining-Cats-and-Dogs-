@@ -21,7 +21,7 @@ canvas {
 
 #game-area {
     position: relative;
-    width: 400px;
+    width: 550px;
     height: 400px;
     background-color: lightblue;
     border: 5px solid black;

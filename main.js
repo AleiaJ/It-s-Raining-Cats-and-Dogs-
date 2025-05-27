@@ -7,7 +7,7 @@ $(document).ready(function() {
     $(document).keydown(function(e) {
         if (e.key === "ArrowLeft" && basketPos > 20) {
             basketPos -= 40;
-        } else if (e.key === "ArrowRight" && basketPos < 300) {
+        } else if (e.key === "ArrowRight" && basketPos < 250) {
             basketPos += 40;
         }
         $("#basket").css("left", basketPos + "px");
@@ -42,7 +42,7 @@ $(document).ready(function() {
     function moveBasket(direction) {
         if (direction === "ArrowLeft" && basketPos > 20) {
             basketPos -= 40;
-        } else if (direction === "ArrowRight" && basketPos < 300) {
+        } else if (direction === "ArrowRight" && basketPos < 445) {
             basketPos += 40;
         }
         $("#basket").css("left", basketPos + "px");
@@ -52,9 +52,9 @@ $(document).ready(function() {
 // Swipe control
 
     function handleSwipe() {
-        if (touchEndX < touchStartX - 50) {
+        if (touchEndX < touchStartX - 80) {
             moveBasket("ArrowLeft"); // Swipe left
-        } else if (touchEndX > touchStartX + 50) {
+        } else if (touchEndX > touchStartX + 80) {
             moveBasket("ArrowRight"); // Swipe right
         }
     }
