@@ -5,7 +5,7 @@ body {
     background-image: url('water.jpg'); 
     background-size: cover; 
     background-position: center; 
-    background-repeat: no-repeat;
+    background-repeat: repeat;
 }
 
 p {
@@ -21,7 +21,7 @@ canvas {
 
 #game-area {
     position: relative;
-    width: 600px;
+    width: 400px;
     height: 400px;
     background-color: lightblue;
     border: 5px solid black;
@@ -40,7 +40,7 @@ button {
     height: 50px;
     font-size: 18px;
     margin: 10px;
-    touch-action: manipulation; /* Improves touch response */
+    touch-action: manipulation;
 }
 
 
