@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Catch the Falling Pets</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>It's Raining Cats and Dogs!</h1>
+    <p>Use left/right arrow keys or buttons to move the basket and catch the cats and dogs!</p>
+
+    <!--divs ad images-->
+    <div id="game-area">
+        <canvas id="gameCanvas" width="400" height="300"></canvas>
+      <img id="basket" src="Basket.png" alt="Basket">
+        <img id="falling-cat" src="Cat.png" alt="Cat">
+        <img id="falling-dog" src="Dog.png" alt="Dog">
+    </div>
+
+    <div id="controls">
+    <button id="leftBtn">◀ Left</button>
+    <button id="rightBtn">Right ▶</button>
+</div>
+
+    <p>Score: <span id="score">0</span></p>
+
+    <script src="main.js"></script>
+</body>
+</html>
